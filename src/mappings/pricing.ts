@@ -63,16 +63,21 @@ let WHITELIST: string[] = [
   // '0xf4CD3d3Fda8d7Fd6C5a500203e38640A70Bf9577', // Yf-Dai
   // '0x2ecc48ba346a73d7d55aa5a46b5e314d9daa6161' // SSGT
 
-  Address.fromString('0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619').toHexString(), // WETH
-  Address.fromString('0x4c28f48448720e9000907bc2611f73022fdce1fa').toHexString(), // WMATIC
-  Address.fromString('0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063').toHexString(), // DAI
+  Address.fromString('0xD6DF932A45C0f255f85145f286eA0b292B21C90B').toHexString(), // AAVE
   Address.fromString('0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174').toHexString(), // USDC
   Address.fromString('0xc2132D05D31c914a87C6611C10748AEb04B58e8F').toHexString(), // USDT
-  Address.fromString('0x16eccfdbb4ee1a85a33f3a9b21175cd7ae753db4').toHexString(),  // ROUTE
+  Address.fromString('0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619').toHexString(), // WETH
+  Address.fromString('0x172370d5Cd63279eFa6d502DAB29171933a610AF').toHexString(), // CRV
+  Address.fromString('0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063').toHexString(), // DAI
+  Address.fromString('0x53E0bca35eC356BD5ddDFebbD1Fc0fD03FaBad39').toHexString(), // LINK
   Address.fromString('0xb33eaad8d922b1083446dc23f610c2567fb5180f').toHexString(),  // UNI
-  Address.fromString('0xC168E40227E4ebD8C1caE80F7a55a4F0e6D66C97').toHexString(),  // DFYN
-  Address.fromString('0xd6df932a45c0f255f85145f286ea0b292b21c90b').toHexString(),  // AAVE
-  Address.fromString('0x1bfd67037b42cf73acf2047067bd4f2c47d9bfd6').toHexString(),  // WBTC
+  Address.fromString('0x914034f0FF781c430Aa9594851cC95806fd19dc6').toHexString(),  // SSGT
+  Address.fromString('0x7E7fF932FAb08A0af569f93Ce65e7b8b23698Ad8').toHexString(),  // Yf-DAI
+  Address.fromString('0xff835562C761205659939B64583dd381a6AA4D92').toHexString(),  // DEXT
+  Address.fromString('0x0cdf14B01692c57fD8d066A053B3A0FA0Aa2Fc11').toHexString(),  // FRM
+  Address.fromString('0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270').toHexString(), // WMATIC
+  Address.fromString('0x3c5D1617C30BA71972adD4b0C9A6B9848f2afeeD').toHexString(), // DAO1
+  Address.fromString('0x831753DD7087CaC61aB5644b308642cc1c33Dc13').toHexString(), // QUICK
 ]
 
 // minimum liquidity required to count towards tracked volume for pairs with small # of Lps
