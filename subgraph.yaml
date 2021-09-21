@@ -1,6 +1,6 @@
 specVersion: 0.0.2
 description: Uniswap is a decentralized protocol for automated token exchange on Ethereum.
-repository: https://github.com/dhavalalite/safeswap-test-graph
+repository: https://github.com/yfdaifinance/Subgraph
 schema:
   file: ./schema.graphql
 dataSources:
@@ -8,7 +8,7 @@ dataSources:
     name: Factory
     network: matic
     source:
-      address: '0xE7Fb3e833eFE5F9c441105EB65Ef8b261266423B'
+      address: '0x8B9e9E48A1a0d216F0dF69475370850Be31Fed69'
       abi: Factory
       startBlock: 10000834
     mapping:
