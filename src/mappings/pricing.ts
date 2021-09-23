@@ -45,7 +45,7 @@ let WHITELIST: string[] = [
   '0xdac17f958d2ee523a2206206994597c13d831ec7', // USDT
   '0xc00e94cb662c3520282e6f5717214004a7f26888', // COMP
   '0x9f8f72aa9304c8b593d555f12ef6589cc3a579a2', // MKR
-  '0xf4CD3d3Fda8d7Fd6C5a500203e38640A70Bf9577', // Yf-Dai
+  // '0xf4CD3d3Fda8d7Fd6C5a500203e38640A70Bf9577', // Yf-Dai
   
   '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2', // WETH
   '0x0000000000085d4780b73119b644ae5ecd22b376', // TUSD
@@ -62,7 +62,7 @@ let WHITELIST: string[] = [
   '0xa47c8bf37f92abed4a126bda807a7b7498661acd', // WUST
   '0x1f9840a85d5af5bf1d1762f925bdaddc4201f984', // UNI
   '0x2260fac5e5542a773aa44fbcfedf7c193bc2c599', // WBTC
-  '0x2ecc48ba346a73d7d55aa5a46b5e314d9daa6161' // SSGT
+  // '0x2ecc48ba346a73d7d55aa5a46b5e314d9daa6161' // SSGT
 ]
 
 // minimum liquidity required to count towards tracked volume for pairs with small # of Lps
