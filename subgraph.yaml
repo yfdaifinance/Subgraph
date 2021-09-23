@@ -1,6 +1,6 @@
 specVersion: 0.0.2
-description: Aims to deliver analytics and historical data for Safeswap.
-repository: https://github.com/yfdaifinance/Subgraph/tree/matic
+description: Safeswap analytics on ethereum.
+repository: https://github.com/yfdaifinance/Subgraph
 schema:
   file: ./schema.graphql
 dataSources:
