@@ -15,28 +15,27 @@ export function getEthPriceInUSD(): BigDecimal {
   let usdtPair = Pair.load(Address.fromString(USDT_WETH_PAIR).toHexString()) // usdt is token1
 
   // all 3 have been created
-  return usdtPair.token0Price
-  // if (daiPair !== null && usdcPair !== null && usdtPair !== null) {
-  //   let totalLiquidityETH = daiPair.reserve1.plus(usdcPair.reserve1).plus(usdtPair.reserve0)
-  //   let daiWeight = daiPair.reserve1.div(totalLiquidityETH)
-  //   let usdcWeight = usdcPair.reserve1.div(totalLiquidityETH)
-  //   let usdtWeight = usdtPair.reserve0.div(totalLiquidityETH)
-  //   return daiPair.token0Price
-  //     .times(daiWeight)
-  //     .plus(usdcPair.token0Price.times(usdcWeight))
-  //     .plus(usdtPair.token1Price.times(usdtWeight))
-  //   // dai and USDC have been created
-  // } else if (daiPair !== null && usdtPair !== null) {
-  //   let totalLiquidityETH = daiPair.reserve1.plus(usdtPair.reserve1)
-  //   let daiWeight = daiPair.reserve1.div(totalLiquidityETH)
-  //   let usdcWeight = usdtPair.reserve1.div(totalLiquidityETH)
-  //   return daiPair.token0Price.times(daiWeight).plus(usdtPair.token0Price.times(usdcWeight))
-  //   // USDC is the only pair so far
-  // } else if (usdtPair !== null) {
-  //   return usdtPair.token0Price
-  // } else {
-  //   return ZERO_BD
-  // }
+  if (daiPair !== null && usdcPair !== null && usdtPair !== null) {
+    let totalLiquidityETH = daiPair.reserve1.plus(usdcPair.reserve1).plus(usdtPair.reserve0)
+    let daiWeight = daiPair.reserve1.div(totalLiquidityETH)
+    let usdcWeight = usdcPair.reserve1.div(totalLiquidityETH)
+    let usdtWeight = usdtPair.reserve0.div(totalLiquidityETH)
+    return daiPair.token0Price
+      .times(daiWeight)
+      .plus(usdcPair.token0Price.times(usdcWeight))
+      .plus(usdtPair.token1Price.times(usdtWeight))
+    // dai and USDC have been created
+  } else if (daiPair !== null && usdtPair !== null) {
+    let totalLiquidityETH = daiPair.reserve1.plus(usdtPair.reserve1)
+    let daiWeight = daiPair.reserve1.div(totalLiquidityETH)
+    let usdcWeight = usdtPair.reserve1.div(totalLiquidityETH)
+    return daiPair.token0Price.times(daiWeight).plus(usdtPair.token0Price.times(usdcWeight))
+    // USDC is the only pair so far
+  } else if (usdtPair !== null) {
+    return usdtPair.token0Price
+  } else {
+    return ZERO_BD
+  }
 }
 
 // token where amounts should contribute to tracked volume and liquidity
@@ -64,21 +63,37 @@ let WHITELIST: string[] = [
   // '0xf4CD3d3Fda8d7Fd6C5a500203e38640A70Bf9577', // Yf-Dai
   // '0x2ecc48ba346a73d7d55aa5a46b5e314d9daa6161' // SSGT
 
-  Address.fromString('0xD6DF932A45C0f255f85145f286eA0b292B21C90B').toHexString(), // AAVE
-  Address.fromString('0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174').toHexString(), // USDC
-  Address.fromString('0xc2132D05D31c914a87C6611C10748AEb04B58e8F').toHexString(), // USDT
-  Address.fromString('0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619').toHexString(), // WETH
-  Address.fromString('0x172370d5Cd63279eFa6d502DAB29171933a610AF').toHexString(), // CRV
-  Address.fromString('0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063').toHexString(), // DAI
-  Address.fromString('0x53E0bca35eC356BD5ddDFebbD1Fc0fD03FaBad39').toHexString(), // LINK
-  Address.fromString('0xb33eaad8d922b1083446dc23f610c2567fb5180f').toHexString(),  // UNI
-  Address.fromString('0x914034f0FF781c430Aa9594851cC95806fd19dc6').toHexString(),  // SSGT
-  Address.fromString('0x7E7fF932FAb08A0af569f93Ce65e7b8b23698Ad8').toHexString(),  // Yf-DAI
-  Address.fromString('0xff835562C761205659939B64583dd381a6AA4D92').toHexString(),  // DEXT
-  Address.fromString('0x0cdf14B01692c57fD8d066A053B3A0FA0Aa2Fc11').toHexString(),  // FRM
-  Address.fromString('0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270').toHexString(), // WMATIC
-  Address.fromString('0x3c5D1617C30BA71972adD4b0C9A6B9848f2afeeD').toHexString(), // DAO1
-  Address.fromString('0x831753DD7087CaC61aB5644b308642cc1c33Dc13').toHexString(), // QUICK
+  '0xd6df932a45c0f255f85145f286ea0b292b21c90b', // AAVE
+  '0x2791bca1f2de4661ed88a30c99a7a9449aa84174', // USDC
+  '0xc2132d05d31c914a87c6611c10748aeb04b58e8f', // USDT
+  '0x7ceb23fd6bc0add59e62ac25578270cff1b9f619', // WETH
+  '0x172370d5cd63279efa6d502dab29171933a610af', // CRV
+  '0x8f3cf7ad23cd3cadbd9735aff958023239c6a063', // DAI
+  '0x53e0bca35ec356bd5dddfebbd1fc0fd03fabad39', // LINK
+  '0xb33eaad8d922b1083446dc23f610c2567fb5180f', // UNI
+  '0x914034f0ff781c430aa9594851cc95806fd19dc6', // SSGT
+  '0x7e7ff932fab08a0af569f93ce65e7b8b23698ad8', // Yf-DAI
+  '0xff835562c761205659939b64583dd381a6aa4d92', // DEXT
+  '0x0cdf14b01692c57fd8d066a053b3a0fa0aa2fc11', // FRM
+  '0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270', // WMATIC
+  '0x3c5d1617c30ba71972add4b0c9a6b9848f2afeed', // DAO1
+  '0x831753dd7087cac61ab5644b308642cc1c33dc13' // QUICK
+
+  // Address.fromString('0xD6DF932A45C0f255f85145f286eA0b292B21C90B').toHexString(), // AAVE
+  // Address.fromString('0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174').toHexString(), // USDC
+  // Address.fromString('0xc2132D05D31c914a87C6611C10748AEb04B58e8F').toHexString(), // USDT
+  // Address.fromString('0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619').toHexString(), // WETH
+  // Address.fromString('0x172370d5Cd63279eFa6d502DAB29171933a610AF').toHexString(), // CRV
+  // Address.fromString('0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063').toHexString(), // DAI
+  // Address.fromString('0x53E0bca35eC356BD5ddDFebbD1Fc0fD03FaBad39').toHexString(), // LINK
+  // Address.fromString('0xb33eaad8d922b1083446dc23f610c2567fb5180f').toHexString(), // UNI
+  // Address.fromString('0x914034f0FF781c430Aa9594851cC95806fd19dc6').toHexString(), // SSGT
+  // Address.fromString('0x7E7fF932FAb08A0af569f93Ce65e7b8b23698Ad8').toHexString(), // Yf-DAI
+  // Address.fromString('0xff835562C761205659939B64583dd381a6AA4D92').toHexString(), // DEXT
+  // Address.fromString('0x0cdf14B01692c57fD8d066A053B3A0FA0Aa2Fc11').toHexString(), // FRM
+  // Address.fromString('0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270').toHexString(), // WMATIC
+  // Address.fromString('0x3c5D1617C30BA71972adD4b0C9A6B9848f2afeeD').toHexString(), // DAO1
+  // Address.fromString('0x831753DD7087CaC61aB5644b308642cc1c33Dc13').toHexString() // QUICK
 ]
 
 // minimum liquidity required to count towards tracked volume for pairs with small # of Lps
