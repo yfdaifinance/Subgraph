@@ -1,5 +1,5 @@
 specVersion: 0.0.2
-description: Safeswap analytics on ethereum.
+description: Safeswap analytics on polygon.
 repository: https://github.com/yfdaifinance/Subgraph
 schema:
   file: ./schema.graphql
@@ -8,7 +8,7 @@ dataSources:
     name: Factory
     network: matic
     source:
-      address: '0xFEE389DB6a7813eCe5C235C232cd2A27CA65EB5C'
+      address: '0x5be44d6C5634161CdaDcC2bc35389325aa493e83'
       abi: Factory
       startBlock: 19096153
     mapping:
