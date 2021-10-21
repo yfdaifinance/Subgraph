@@ -6,7 +6,7 @@ import { ZERO_BD, factoryContract, ADDRESS_ZERO, ONE_BD, UNTRACKED_PAIRS } from 
 const WETH_ADDRESS = '0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270'
 const USDC_WETH_PAIR = '0x7d51bad48d253dae37cc82cad07f73849286deec ' // created 10008355
 const DAI_WETH_PAIR = '0xe69Fe44b087EaB9d0f1CBdcf63c1b266dcc556FE ' // created block 10042267
-const USDT_WETH_PAIR = '0x63C29840b141bE700e256f42Bb3dF71063a61958 ' // created block 10093341
+const USDT_WETH_PAIR = '0xb21C3387aa3dc5F476Ac8678e3F3C9520EB52eF9 ' // created block 10093341
 
 export function getEthPriceInUSD(): BigDecimal {
   // fetch eth prices for each stablecoin
