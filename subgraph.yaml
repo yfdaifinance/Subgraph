@@ -1,5 +1,5 @@
-specVersion: 0.0.2
-description: Safeswap analytics on polygon.
+specVersion: 0.0.3
+description: Safeswap analytics for polygon.
 repository: https://github.com/yfdaifinance/Subgraph
 schema:
   file: ./schema.graphql
