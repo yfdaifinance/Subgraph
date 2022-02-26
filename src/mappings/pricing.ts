@@ -5,14 +5,14 @@ import { ZERO_BD, factoryContract, ADDRESS_ZERO, ONE_BD, UNTRACKED_PAIRS } from 
 
 // const WETH_ADDRESS = '0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270'
 const WETH_ADDRESS = '0x7ceb23fd6bc0add59e62ac25578270cff1b9f619' //as it is in router
-const USDC_WETH_PAIR = '0x47ebdaaa1da5a2907097a15f8c68617752c68523' //invalid pair
-const DAI_WETH_PAIR = '0xd20b3496cc074931e62839f6f07b7593733c67c1' //invalid pair
+// const USDC_WETH_PAIR = '0x47ebdaaa1da5a2907097a15f8c68617752c68523' //invalid pair
+// const DAI_WETH_PAIR = '0xd20b3496cc074931e62839f6f07b7593733c67c1' //invalid pair
 const USDT_WETH_PAIR = '0xf3180ba9800f862df8edc962ec1fdd56e62b6b98' //only valid pair
 
 export function getEthPriceInUSD(): BigDecimal {
   // fetch eth prices for each stablecoin
-  let daiPair = Pair.load(Address.fromString(DAI_WETH_PAIR).toHexString()) // dai is token0
-  let usdcPair = Pair.load(Address.fromString(USDC_WETH_PAIR).toHexString()) // usdc is token0
+  // let daiPair = Pair.load(Address.fromString(DAI_WETH_PAIR).toHexString()) // dai is token0
+  // let usdcPair = Pair.load(Address.fromString(USDC_WETH_PAIR).toHexString()) // usdc is token0
   let usdtPair = Pair.load(Address.fromString(USDT_WETH_PAIR).toHexString()) // usdt is token1
 
   // all 3 have been created
@@ -58,6 +58,7 @@ let WHITELIST: string[] = [
   '0xb33eaad8d922b1083446dc23f610c2567fb5180f', // UNI
   '0x914034f0ff781c430aa9594851cc95806fd19dc6', // SSGT
   '0x7e7ff932fab08a0af569f93ce65e7b8b23698ad8', // Yf-DAI
+  '0xf8d7195eeb28c7449f7ef8557ff9a4da86da0c64', // I7
   '0xff835562c761205659939b64583dd381a6aa4d92', // DEXT
   '0x0cdf14b01692c57fd8d066a053b3a0fa0aa2fc11', // FRM
   '0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270', // WMATIC
